@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { GameboardComponent } from './gameboard/gameboard.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: '/gameboard', pathMatch: 'full' },
+  { path: 'gameboard', component: GameboardComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

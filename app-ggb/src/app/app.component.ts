@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import * as $ from 'jquery';
 
 @Component({
@@ -436,10 +435,10 @@ export class AppComponent {
       }
     }
     
-    GGB.savedBoards.init();
+    /*GGB.savedBoards.init();
     GGB.configTiles.init();
     GGB.gameboard.init();
-    GGB.page.init();
+    GGB.page.init();*/
     
   }
 }

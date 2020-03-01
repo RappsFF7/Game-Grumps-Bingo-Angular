@@ -1,0 +1,16 @@
+<div id="gameboard-wrapper" class="content-body" style='display: block'>
+    <table id="gameboard">
+        <thead>
+            <tr>
+                <th colspan="100%">
+                    <select id="gameboard-name" class="select-button"></select>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let r of board.rows">
+                <td *ngFor="let c of r" (click)="onToggleSquare(c)" [ngClass]="{'checked': c.isSelected}">{{c.title}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

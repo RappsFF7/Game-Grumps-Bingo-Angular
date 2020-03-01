@@ -4,36 +4,8 @@
       <div id="background-right"></div>
   </div>
   <div id="content">
-      <div id="header-bar">
-          <img id="gg-logo" src="assets/images/gg_logo.png" />
-          <img id="bingo-logo" src="assets/images/bingo_logo.png" />
-          <span id="config-name" class="hidden"></span>
-          <span id="header-menu">
-              <img id="btn-menu" src="assets/images/icons8-menu-vertical-50.png" />
-          </span>
-          <div id="header-menu-popup">
-              <ul class="ul-nostyle">
-                  <li id="btn-menu-back"><img src="assets/images/icons8-menu-vertical-50.png" />
-                  <li id="btn-config"><img src="assets/images/icons8-settings-50.svg" />Config
-                  <li id="btn-saved"><img src="assets/images/icons8-playlist-50.png" />Saved
-                  <li id="btn-share"><img src="assets/images/icons8-share-30.svg" />Share
-                  <li id="btn-reset"><img src="assets/images/icons8-reset-50.png" />Reset
-                  <li id="btn-about"><img src="assets/images/icons8-info-50.svg" />About
-              </ul>
-          </div>
-      </div>
-      <div id="gameboard-wrapper" class="content-body">
-          <table id="gameboard">
-              <thead>
-                  <tr>
-                      <th colspan="100%">
-                          <select id="gameboard-name" class="select-button"></select>
-                      </th>
-                  </tr>
-              </thead>
-              <tbody></tbody>
-          </table>
-      </div>
+      <app-header></app-header>
+      <router-outlet></router-outlet>
       <div id="config-wrapper" class="content-body">
           <div id="config-area">
               <table id="config-tiles-template" class="template">
@@ -535,7 +507,3 @@
       GGB.page.init();
   </script>
 </div>
-
-
-
-<router-outlet></router-outlet>
