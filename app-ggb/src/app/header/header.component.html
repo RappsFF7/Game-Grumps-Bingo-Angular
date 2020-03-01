@@ -4,13 +4,13 @@
         <img id="bingo-logo" src="assets/images/bingo_logo.png" />
     </a>
     <span id="config-name" class="hidden"></span>
-    <span id="header-menu">
+    <span id="header-menu" (click)="onToggleNav()">
         <img id="btn-menu" src="assets/images/icons8-menu-vertical-50.png" />
     </span>
-    <div id="header-menu-popup">
+    <div id="header-menu-popup" [ngClass]="{'hidden': !isShowNavDropdown}">
         <ul class="ul-nostyle">
-            <li id="btn-menu-back"><img src="assets/images/icons8-menu-vertical-50.png" />
-            <li id="btn-config" class="hidden"><img src="assets/images/icons8-settings-50.svg" />Config
+            <li id="btn-menu-back" (click)="onToggleNav()"><img src="assets/images/icons8-menu-vertical-50.png" />
+            <li id="btn-config"><a routerLink="/config" (click)="onToggleNav()"><img src="assets/images/icons8-settings-50.svg" />Config</a>
             <li id="btn-saved" class="hidden"><img src="assets/images/icons8-playlist-50.png" />Saved
             <li id="btn-share" class="hidden"><img src="assets/images/icons8-share-30.svg" />Share
             <li id="btn-reset" class="hidden"><img src="assets/images/icons8-reset-50.png" />Reset

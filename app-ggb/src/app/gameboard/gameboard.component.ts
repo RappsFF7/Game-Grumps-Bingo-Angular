@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Gameboard } from '../gameboard';
+import { GameboardService } from '../gameboard.service';
 import { Tile } from '../tile';
 
 import * as $ from 'jquery';
@@ -12,8 +13,8 @@ import * as $ from 'jquery';
 export class GameboardComponent implements OnInit {
   board: Gameboard;
 
-  constructor() {
-    this.board = Gameboard.getDefaultBoard();
+  constructor(gameboardService: GameboardService) {
+    this.board = gameboardService.currentBoard;
     this.board.doRandomizeRows();
    }
 

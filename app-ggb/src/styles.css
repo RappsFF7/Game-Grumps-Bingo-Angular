@@ -61,7 +61,7 @@ body { padding: 0; margin: 0; }
 #ggb #content { position: relative; text-align: center; user-select: none; }
 #ggb #content table { display: inline-table; }
 #ggb #content table.template { display: none; }
-#ggb #content .content-body { display: none; box-shadow: 0 0 10px black; background-color: #F39450; }
+#ggb #content .content-body { box-shadow: 0 0 10px black; background-color: #F39450; }
 #ggb #content #gameboard-wrapper.content-body { box-shadow: none; background-color: transparent; }
 
 #ggb #header-bar { background-color: #F39450; text-align: left; padding: 1vh; margin-bottom: 4vh; box-shadow: 0 0 10px black; }
@@ -69,7 +69,7 @@ body { padding: 0; margin: 0; }
 #ggb #header-bar img { height: 5vh; max-height: 10vw; }
 #ggb #header-menu { float: right; }
 #ggb #header-menu > * { margin-left: 15px; }
-#ggb #header-menu-popup { display: none; background-color: #F39450; padding: 1vh; position: fixed; top: 0; right: 0; box-shadow: -1px 1px 20px black; }
+#ggb #header-menu-popup { background-color: #F39450; padding: 1vh; position: fixed; top: 0; right: 0; box-shadow: -1px 1px 20px black; }
 #ggb #header-menu-popup ul { display: inline-block; }
 #ggb #header-menu-popup li { padding: 1vh; }
 #ggb #header-menu-popup li:first-child { padding: 0; text-align: right; }

@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GameboardComponent } from './gameboard/gameboard.component';
+import { ConfigComponent } from './config/config.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/gameboard', pathMatch: 'full' },
-  { path: 'gameboard', component: GameboardComponent }
+  { path: 'gameboard', component: GameboardComponent },
+  { path: 'config', component: ConfigComponent }
 ];
 
 @NgModule({

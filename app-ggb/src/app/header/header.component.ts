@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  isShowNavDropdown: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public onToggleNav() {
+    this.isShowNavDropdown = !this.isShowNavDropdown;
   }
 
 }
