@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Gameboard } from '../gameboard';
-import { GameboardService } from '../gameboard.service';
-import { Tile } from '../tile';
+import { Gameboard } from '../../models/gameboard';
+import { GameboardService } from '../../services/gameboard.service';
+import { Tile } from '../../models/tile';
 
 import * as $ from 'jquery';
 

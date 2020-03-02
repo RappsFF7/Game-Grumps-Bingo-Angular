@@ -9,10 +9,6 @@ export class Gameboard {
     // runtime
     rows?: Tile[][];
 
-    public static getDefaultTile(): Tile {
-        return new Tile("Arin does something");
-    }
-
     public static getDefaultBoard(): Gameboard {
         let board = new Gameboard();
         board.name = 'Power Hour!';

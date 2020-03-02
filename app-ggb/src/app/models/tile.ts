@@ -9,4 +9,8 @@ export class Tile {
         this.title = title;
         this.free = free;
     }
+    
+    public static getDefaultTile(): Tile {
+        return new Tile("Arin does something");
+    }
 }
