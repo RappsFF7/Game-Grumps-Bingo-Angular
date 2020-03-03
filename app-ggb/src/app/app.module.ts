@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { GameboardComponent } from './components/gameboard/gameboard.component';
 import { ConfigComponent } from './components/config/config.component';
 import { SavedBoardsComponent } from './components/saved-boards/saved-boards.component';
+import { ShareComponent } from './components/share/share.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SavedBoardsComponent } from './components/saved-boards/saved-boards.com
     HeaderComponent,
     GameboardComponent,
     ConfigComponent,
-    SavedBoardsComponent
+    SavedBoardsComponent,
+    ShareComponent
   ],
   imports: [
     BrowserModule,

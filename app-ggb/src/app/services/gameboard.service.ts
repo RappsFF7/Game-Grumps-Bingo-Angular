@@ -16,4 +16,12 @@ export class GameboardService {
     secondBoard.name = "Power Hour 2!";
     this.boards.push(secondBoard);
   }
+
+  public doSave() {
+    
+  }
+
+  public doLoad() {
+
+  }
 }

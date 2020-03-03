@@ -1,6 +1,8 @@
 import { Tile } from './tile';
 import { Title } from '@angular/platform-browser';
 
+import * as $ from 'jquery';
+
 export class Gameboard {
     default: boolean = false;
     name: string;
@@ -91,5 +93,13 @@ export class Gameboard {
             }
             this.rows[r] = cols;
         }
+    }
+
+    public toSerialized(): string {
+        return btoa(JSON.stringify(this));
+    }
+
+    public static fromSerialized(serializedData: string): Gameboard {
+        return (serializedData ? $.extend((new Gameboard()), JSON.parse(atob(serializedData))) : undefined);
     }
 }

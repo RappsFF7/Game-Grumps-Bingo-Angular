@@ -3,13 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { GameboardComponent } from './components/gameboard/gameboard.component';
 import { ConfigComponent } from './components/config/config.component';
 import { SavedBoardsComponent } from './components/saved-boards/saved-boards.component';
+import { ShareComponent } from './components/share/share.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/gameboard', pathMatch: 'full' },
   { path: 'gameboard', component: GameboardComponent },
+  { path: 'gameboard/:serializedBoard', component: GameboardComponent },
   { path: 'config', component: ConfigComponent },
-  { path: 'saved-boards', component: SavedBoardsComponent }
+  { path: 'saved-boards', component: SavedBoardsComponent },
+  { path: 'share', component: ShareComponent }
 ];
 
 @NgModule({
