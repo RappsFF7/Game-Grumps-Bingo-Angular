@@ -1,0 +1,26 @@
+<div id="saved-boards-wrapper" class="content-body">
+    <div id="saved-boards-area">
+        <table id="saved-boards" class="edit-list">
+            <thead>
+                <tr>
+                    <th colspan="100%">Saved Gameboards</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let board of boards; index as i">
+                    <td><img class="icon icon-delete remove" (click)="doRemoveGameboard(i)" /></td>
+                    <td class="hidden"><input [id]="'lock'+i" name="lock" type="checkbox" class="icon icon-checkbox icon-lock" /><label [for]="'lock'+i"></label></td>
+                    <td class="hidden"><input [id]="'default'+i" name="default" type="radio" class="icon icon-checkbox icon-dot" [(ngModel)]="board.default" /><label [for]="'default'+i"></label></td>
+                    <td><img class="icon icon-load load" (click)="setCurrentGameboard(i)" /></td>
+                    <td class="name"><input name="name" [(ngModel)]="board.name" /></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr><td colspan="100%"><div class="hr"></div></td></tr>
+                <tr>
+                    <td colspan="100%"><button id="btn-back" class="button">Back</button></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

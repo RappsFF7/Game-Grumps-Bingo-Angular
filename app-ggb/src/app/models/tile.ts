@@ -10,7 +10,7 @@ export class Tile {
         this.free = free;
     }
     
-    public static getDefaultTile(): Tile {
+    public static generateDefaultTile(): Tile {
         return new Tile("Arin does something");
     }
 }

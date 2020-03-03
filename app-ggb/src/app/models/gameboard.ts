@@ -9,7 +9,7 @@ export class Gameboard {
     // runtime
     rows?: Tile[][];
 
-    public static getDefaultBoard(): Gameboard {
+    public static generateDefaultBoard(): Gameboard {
         let board = new Gameboard();
         board.name = 'Power Hour!';
         //img: 'images/gg_bg.jpg',

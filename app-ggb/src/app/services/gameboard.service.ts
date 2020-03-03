@@ -5,9 +5,15 @@ import { Gameboard } from '../models/gameboard';
   providedIn: 'root'
 })
 export class GameboardService {
+  public boards: Gameboard[];
   public currentBoard: Gameboard;
 
   constructor() { 
-    this.currentBoard = Gameboard.getDefaultBoard();
+    this.boards = [Gameboard.generateDefaultBoard()];
+    this.currentBoard = this.boards[0];
+    
+    var secondBoard = Gameboard.generateDefaultBoard();
+    secondBoard.name = "Power Hour 2!";
+    this.boards.push(secondBoard);
   }
 }

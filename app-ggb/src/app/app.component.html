@@ -6,33 +6,6 @@
   <div id="content">
       <app-header></app-header>
       <router-outlet></router-outlet>
-      <div id="saved-boards-wrapper" class="content-body hidden">
-          <div id="saved-boards-area">
-              <table id="saved-boards-template" class="template">
-                  <tr class="template">
-                      <td><img class="icon icon-delete remove" /></td>
-                      <td class="hidden"><input name="lock" type="checkbox" class="icon icon-checkbox icon-lock" /><label for=""></label></td>
-                      <td class="hidden"><input name="default" type="radio" class="icon icon-checkbox icon-dot" /><label for=""></label></td>
-                      <td><img class="icon icon-load load" /></td>
-                      <td class="name"><input name="name" /></td>
-                  </tr>
-              </table>
-              <table id="saved-boards" class="edit-list">
-                  <thead>
-                      <tr>
-                          <th colspan="100%">Saved Gameboards</th>
-                      </tr>
-                  </thead>
-                  <tbody></tbody>
-                  <tfoot>
-                      <tr><td colspan="100%"><div class="hr"></div></td></tr>
-                      <tr>
-                          <td colspan="100%"><button id="btn-back" class="button">Back</button></td>
-                      </tr>
-                  </tfoot>
-              </table>
-          </div>
-      </div>
       <div id="share-wrapper" class="content-body hidden">
           <div>Copy this link and send it to your friends!</div>
           <div><a id="lnkShare">Custom Bingo</a></div>

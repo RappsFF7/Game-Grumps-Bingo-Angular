@@ -8,13 +8,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { GameboardComponent } from './components/gameboard/gameboard.component';
 import { ConfigComponent } from './components/config/config.component';
+import { SavedBoardsComponent } from './components/saved-boards/saved-boards.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     GameboardComponent,
-    ConfigComponent
+    ConfigComponent,
+    SavedBoardsComponent
   ],
   imports: [
     BrowserModule,
