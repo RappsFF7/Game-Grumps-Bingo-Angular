@@ -7,10 +7,7 @@ import { GameboardService } from 'src/app/services/gameboard.service';
   styleUrls: ['./share.component.css']
 })
 export class ShareComponent implements OnInit {
-  boardParams: string;
-
   constructor(public gameboardService: GameboardService) { 
-    this.boardParams = gameboardService.currentBoard.toSerialized();
   }
 
   ngOnInit(): void {

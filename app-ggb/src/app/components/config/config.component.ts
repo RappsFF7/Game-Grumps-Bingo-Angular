@@ -9,17 +9,14 @@ import { Tile } from '../../models/tile';
   styleUrls: ['./config.component.css']
 })
 export class ConfigComponent implements OnInit {
-  board: Gameboard;
-
-  constructor(gameboardService: GameboardService) { 
-    this.board = gameboardService.currentBoard;
+  constructor(public gameboardService: GameboardService) { 
   }
 
   ngOnInit(): void {
   }
 
   doRemoveTile(i: number) {
-    this.board.tiles.splice(i,1);
+    this.gameboardService.currentBoard.tiles.splice(i,1);
   }
 
 }

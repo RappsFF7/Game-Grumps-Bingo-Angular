@@ -4,13 +4,13 @@
             <tr>
                 <th colspan="100%">
                     <select id="gameboard-name" class="select-button">
-                        <option>{{board.name}}</option>
+                        <option>{{gameboardService.currentBoard.name}}</option>
                     </select>
                 </th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let r of board.rows">
+            <tr *ngFor="let r of gameboardService.currentBoard.rows">
                 <td *ngFor="let c of r" (click)="onToggleSquare(c)" [ngClass]="{'checked': c.isSelected}">{{c.title}}</td>
             </tr>
         </tbody>

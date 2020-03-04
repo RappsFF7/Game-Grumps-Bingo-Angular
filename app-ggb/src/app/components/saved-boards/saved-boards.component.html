@@ -7,7 +7,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let board of boards; index as i">
+                <tr *ngFor="let board of gameboardService.boards; index as i">
                     <td><img class="icon icon-delete remove" (click)="doRemoveGameboard(i)" /></td>
                     <td class="hidden"><input [id]="'lock'+i" name="lock" type="checkbox" class="icon icon-checkbox icon-lock" /><label [for]="'lock'+i"></label></td>
                     <td class="hidden"><input [id]="'default'+i" name="default" type="radio" class="icon icon-checkbox icon-dot" [(ngModel)]="board.default" /><label [for]="'default'+i"></label></td>

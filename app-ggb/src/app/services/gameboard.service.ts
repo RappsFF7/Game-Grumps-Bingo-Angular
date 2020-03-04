@@ -8,7 +8,7 @@ export class GameboardService {
   public boards: Gameboard[];
   public currentBoard: Gameboard;
 
-  constructor() { 
+  constructor() {
     this.boards = [Gameboard.generateDefaultBoard()];
     this.currentBoard = this.boards[0];
     

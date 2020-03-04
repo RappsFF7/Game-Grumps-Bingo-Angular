@@ -54,7 +54,12 @@ export class Gameboard {
         return board;
     }
 
-    public doRandomizeRows() {
+    public doRandomizeRows(isOnlyIfNewBoard?: boolean) {
+        // If desired, only randomize if the board has not been randomized yet
+        if (isOnlyIfNewBoard && this.rows) {
+            return;
+        }
+
         // Ignore tiles with no title
         var availableTiles = this.tiles.filter((el, i) => !!el.title);
     

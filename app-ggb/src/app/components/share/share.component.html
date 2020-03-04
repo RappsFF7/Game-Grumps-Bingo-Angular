@@ -1,4 +1,4 @@
 <div id="share-wrapper" class="content-body">
     <div>Copy this link and send it to your friends!</div>
-    <div><a id="lnkShare" [routerLink]="['/gameboard', boardParams]">Custom Bingo</a></div>
+    <div><a id="lnkShare" [routerLink]="['/gameboard', gameboardService.currentBoard.toSerialized()]">Custom Bingo</a></div>
 </div>

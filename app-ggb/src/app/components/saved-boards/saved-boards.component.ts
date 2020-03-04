@@ -9,18 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./saved-boards.component.css']
 })
 export class SavedBoardsComponent implements OnInit {
-  boards: Gameboard[];
-
   constructor(public gameboardService: GameboardService, public router: Router) { 
-    this.gameboardService = gameboardService;
-    this.boards = gameboardService.boards;
   }
 
   ngOnInit(): void {
   }
 
   doRemoveGameboard(i: number) {
-    this.boards.splice(i,1);
+    this.gameboardService.boards.splice(i,1);
   }
 
   setCurrentGameboard(i: number) {
