@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { GameboardService } from '../../services/gameboard.service';
 import { Gameboard } from '../../models/gameboard';
 import { Tile } from '../../models/tile';
@@ -13,6 +13,10 @@ export class ConfigComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  doUpdate() {
+    this.gameboardService.doSave();
   }
 
   doRemoveTile(i: number) {

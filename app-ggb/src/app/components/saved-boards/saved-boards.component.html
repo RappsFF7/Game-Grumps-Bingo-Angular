@@ -8,11 +8,11 @@
             </thead>
             <tbody>
                 <tr *ngFor="let board of gameboardService.boards; index as i">
-                    <td><img class="icon icon-delete remove" (click)="doRemoveGameboard(i)" /></td>
+                    <td><img class="icon icon-delete remove" (click)="doRemoveGameboard(i)" (ngModelChange)="doUpdate(i)" /></td>
                     <td class="hidden"><input [id]="'lock'+i" name="lock" type="checkbox" class="icon icon-checkbox icon-lock" /><label [for]="'lock'+i"></label></td>
-                    <td class="hidden"><input [id]="'default'+i" name="default" type="radio" class="icon icon-checkbox icon-dot" [(ngModel)]="board.default" /><label [for]="'default'+i"></label></td>
-                    <td><img class="icon icon-load load" (click)="setCurrentGameboard(i)" /></td>
-                    <td class="name"><input name="name" [(ngModel)]="board.name" /></td>
+                    <td class="hidden"><input [id]="'default'+i" name="default" type="radio" class="icon icon-checkbox icon-dot" [(ngModel)]="board.default" (ngModelChange)="doUpdate(i)" /><label [for]="'default'+i"></label></td>
+                    <td><img class="icon icon-load load" (click)="setCurrentGameboard(i)" (ngModelChange)="doUpdate(i)" /></td>
+                    <td class="name"><input name="name" [(ngModel)]="board.name" (ngModelChange)="doUpdate(i)" /></td>
                 </tr>
             </tbody>
             <tfoot>

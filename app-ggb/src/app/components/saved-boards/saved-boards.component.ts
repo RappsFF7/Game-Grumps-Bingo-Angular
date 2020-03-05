@@ -15,6 +15,10 @@ export class SavedBoardsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  doUpdate(i: number) {
+    this.gameboardService.doSave();
+  }
+
   doRemoveGameboard(i: number) {
     this.gameboardService.boards.splice(i,1);
   }

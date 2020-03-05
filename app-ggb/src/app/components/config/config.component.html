@@ -6,14 +6,14 @@
                     <th colspan="100%">Configure Gameboard</th>
                 </tr>
                 <tr>
-                    <th colspan="100%"><input name="name" [(ngModel)]="gameboardService.currentBoard.name" /></th>
+                    <th colspan="100%"><input name="name" [(ngModel)]="gameboardService.currentBoard.name" (ngModelChange)="doUpdate()" /></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let tile of gameboardService.currentBoard.tiles; index as i">
-                    <td class="controls"><img class="icon icon-delete remove" (click)="doRemoveTile(i)" /></td>
-                    <td class="free"><input [id]="'free'+i" name="free" type="checkbox" class="icon icon-checkbox icon-grid" [(ngModel)]="tile.free" /><label [for]="'free'+i"></label></td>
-                    <td class="title"><input name="title" [(ngModel)]="tile.title"></td>
+                    <td class="controls"><img class="icon icon-delete remove" (click)="doRemoveTile(i)" (ngModelChange)="doUpdate()" /></td>
+                    <td class="free"><input [id]="'free'+i" name="free" type="checkbox" class="icon icon-checkbox icon-grid" [(ngModel)]="tile.free" (ngModelChange)="doUpdate()" /><label [for]="'free'+i"></label></td>
+                    <td class="title"><input name="title" [(ngModel)]="tile.title" (ngModelChange)="doUpdate()"></td>
                 </tr>
             </tbody>
             <tfoot>
