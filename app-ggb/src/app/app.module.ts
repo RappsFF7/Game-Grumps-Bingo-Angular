@@ -10,6 +10,7 @@ import { GameboardComponent } from './components/gameboard/gameboard.component';
 import { ConfigComponent } from './components/config/config.component';
 import { SavedBoardsComponent } from './components/saved-boards/saved-boards.component';
 import { ShareComponent } from './components/share/share.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ShareComponent } from './components/share/share.component';
     GameboardComponent,
     ConfigComponent,
     SavedBoardsComponent,
-    ShareComponent
+    ShareComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
