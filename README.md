@@ -1,4 +1,27 @@
-# Setup
+# Game Grumps Bingo
+
+A fun weekend project I started when the streamer Bingo card trend took off. This is a conversion of my [original GGB project](https://github.com/RappsFF7/Game-Grumps-Bingo) in plain HTML/CSS/JS to Angular.
+
+![Website Screenshot](https://raw.githubusercontent.com/RappsFF7/Game-Grumps-Bingo/master/html/images/gg_website_screenshot.png)
+
+## Features
+
+* Bingo game
+    * Themed for the [Game Grumps](https://www.youtube.com/@GameGrumps) youtube channel
+    * The default board is configured for their [Power Hour](https://www.youtube.com/@thegrumps) show
+* Editable cells
+* Can save cell configuration to different, "Game Boards"
+    * Boards are saved locally on the device using browser storage
+* Exportable board via HTML link or share device feature to send to friends or online (couch co-op compatible 😉)
+* Randomizes placement on refresh
+
+# Project Setup
+
+## IDE
+
+I used VS Code for this project.
+
+But feel free to use your IDE of choice. All you need is a terminal and a text editor.
 
 ## Windows
 Run start.ps1

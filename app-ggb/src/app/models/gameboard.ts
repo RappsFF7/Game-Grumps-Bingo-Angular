@@ -10,6 +10,7 @@ export class Gameboard {
 
     // runtime
     rows?: Tile[][];
+    isBingo: boolean = false;
 
     public static generateDefaultBoard(): Gameboard {
         let board = new Gameboard();
@@ -98,6 +99,105 @@ export class Gameboard {
             }
             this.rows[r] = cols;
         }
+    }
+
+    public doCheckForBingo() {
+        var start = (Date.now());
+
+        var IS_LOGGING = false;
+        var log = function (...data: any[]) {
+            if (!IS_LOGGING) return;
+            console.log.apply(console, data);
+        }
+
+        var boardSize = this.rows.length;
+
+        var dataBox = []
+        Array(boardSize).fill(0).map((el, y) => {
+            dataBox.push(Array(boardSize).fill(0).map((el, x) => this.rows[y][x].isSelected))
+        });
+        log('dataBox', dataBox);
+
+        /** Checks a single cell for bingo */
+        var isCellBingo = function (dataBox, posX, posY, runX, runY, checkedCount, codeBranch) {
+            var isBingoData = {
+                pos: posX + "," + posY,
+                run: runX + "," + runY,
+                checkedCount: checkedCount,
+                codeBranch: codeBranch,
+            }
+            log("isBingo", isBingoData);
+
+            var absX = posX + runX;
+            var absY = posY + runY;
+
+            var isOutOfBounds = function (x: number, y: number) {
+                return (x < 0 || x >= boardSize || y < 0 || y >= boardSize);
+            }
+            var getCellValue = function (x: number, y: number, rX: number, rY: number) {
+                var newAbsX = x + rX;
+                var newAbsY = y + rY;
+                if (isOutOfBounds(newAbsX, newAbsY)) return false;
+                return dataBox[newAbsX][newAbsY];
+            }
+
+            // Bingo!
+            if (checkedCount == boardSize) return true;
+
+            // Out of bounds
+            if (isOutOfBounds(absX, absY)) return false;
+
+            // Cell is not checked
+            var cellVal = dataBox[absX][absY];
+            if (cellVal !== true) return false;
+            
+            // Cell is checked
+            else {
+                // No run started, start run in all 8 surrounding directions
+                if (checkedCount == 0) {
+                    for (var y = -1; y <= 1; y++) {
+                        for (var x = -1; x <= 1; x++) {
+                            if (x == 0 && y == 0) continue;
+                            var isCellBingoVal = isCellBingo(dataBox, posX, posY, x, y, 2, 'run start ' + [x, y]);
+                            if (isCellBingoVal) return true;
+                        }
+                    }
+                }
+
+                // Run already started, continue singlular direction
+                else {
+                    var newRunX = runX + (runX == 0 ? 0 : runX > 0 ? 1 : -1);
+                    var newRunY = runY + (runY == 0 ? 0 : runY > 0 ? 1 : -1);
+                    var newCellVal = getCellValue(posX, posY, newRunX, newRunY);
+                    if (newCellVal === true) {
+                        return isCellBingo(dataBox, posX, posY, newRunX, newRunY, (checkedCount + 1), 'run continue ' + [newRunX, newRunY]);
+                    }
+                    isBingoData.codeBranch = 'run end ' + [newRunX, newRunY];
+                    log("isBingo", isBingoData);
+                    return false
+                }
+            }
+        }
+
+        /** Walks the board, checking every cell for bingo */
+        function isBoardBingo() {
+            for (var y = 0; y < boardSize; y++) {
+                for (var x = 0; x < boardSize; x++) {
+                    if (isCellBingo(dataBox, x, y, 0, 0, 0, 'walk board')) return true;
+                }
+            }
+            return false;
+        }
+
+        // Check the board for a winning condition
+        let isWin = isBoardBingo();
+        if (isWin) {
+            this.isBingo = true;
+        }
+        log('isBingo: ' + isWin);
+
+        log('time to complete ' + (Date.now() - start));
+        return isWin;
     }
 
     public toSerialized(): string {

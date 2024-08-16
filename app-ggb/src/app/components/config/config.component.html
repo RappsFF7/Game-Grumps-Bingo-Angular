@@ -11,15 +11,18 @@
             </thead>
             <tbody>
                 <tr *ngFor="let tile of gameboardService.currentBoard.tiles; index as i">
-                    <td class="controls"><img class="icon icon-delete remove" (click)="doRemoveTile(i)" (ngModelChange)="doUpdate()" /></td>
-                    <td class="free"><input [id]="'free'+i" name="free" type="checkbox" class="icon icon-checkbox icon-grid" [(ngModel)]="tile.free" (ngModelChange)="doUpdate()" /><label [for]="'free'+i"></label></td>
+                    <td class="controls" title="Delete"><img class="icon icon-delete remove clickable" (click)="doRemoveTile(i)" (ngModelChange)="doUpdate()" /></td>
+                    <td class="free">
+                        <input [id]="'free'+i" name="free" type="checkbox" class="icon icon-checkbox icon-grid" [(ngModel)]="tile.free" (ngModelChange)="doUpdate()" />
+                        <label [for]="'free'+i" title="Free or Surrounding Tile" class="clickable"></label>
+                    </td>
                     <td class="title"><input name="title" [(ngModel)]="tile.title" (ngModelChange)="doUpdate()"></td>
                 </tr>
             </tbody>
             <tfoot>
                 <tr><td colspan="100%"><div class="hr"></div></td></tr>
                 <tr>
-                    <td colspan="100%"><a routerLink="/"><button id="btn-config-back" class="button">Back</button></a></td>
+                    <td colspan="100%"><a routerLink="/"><button id="btn-config-back" class="button clickable">Back</button></a></td>
                 </tr>
             </tfoot>
         </table>

@@ -25,6 +25,17 @@ export class GameboardComponent implements OnInit {
 
   onToggleSquare(sender: Tile) {
     sender.isSelected = !sender.isSelected;
+    this.gameboardService.currentBoard.doCheckForBingo();
+  }
+
+  doHideBingo() {
+      this.gameboardService.currentBoard.isBingo = false
+  }
+
+  doClear() {
+    if (confirm("Clear Board will uncheck all checked board tiles. Do you want to continue?")) {
+      this.gameboardService.currentBoard.rows.forEach(row => row.forEach(cell => cell.isSelected = false))
+    }
   }
 
   /*

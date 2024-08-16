@@ -14,7 +14,7 @@ body { padding: 0; margin: 0; }
 
 .template { display: none; }
 .dialog { display: none; }
-.hidden { display: none; }
+.hidden { display: none !important; }
 .ul-nostyle { padding: 0; margin: 0; }
 .ul-nostyle > li { padding: 0; margin: 0; list-style: none; }
 .hr { border-top: 1px solid #f1d2b8; margin: 5px; }
@@ -27,6 +27,8 @@ body { padding: 0; margin: 0; }
 #ggb input,
 #ggb select,
 #ggb option { font-size: 32px; font-family: 'B612', sans-serif; }
+
+#ggb .clickable { cursor: pointer; }
 
 #ggb .icon { height: 50px; width: 50px; }
 #ggb .icon-delete { background-image: url('/assets/images/icons8-delete-50.svg'); background-size: contain; }
@@ -43,7 +45,7 @@ body { padding: 0; margin: 0; }
 #ggb .icon-checkbox.icon-dot ~ label { background-image: url('/assets/images/icons8-circle-filled-50.png'); }
 #ggb .icon-checkbox.icon-dot:checked ~ label { background-image: url('/assets/images/icons8-circle-50.png'); }
 
-#ggb .edit-list { width: 100%; border-spacing: 0 1vw; }
+#ggb .edit-list { width: 100%; max-width: 1024px; border-spacing: 0 1vw; }
 #ggb .edit-list tr { }
 #ggb .edit-list tr > * { padding: 10px 15px; }
 #ggb .edit-list tr > *:first-child { border-radius: 25px 0 0 25px; padding-left: 30px; }
@@ -64,27 +66,33 @@ body { padding: 0; margin: 0; }
 #ggb #content .content-body { box-shadow: 0 0 10px black; background-color: #F39450; }
 #ggb #content #gameboard-wrapper.content-body { box-shadow: none; background-color: transparent; }
 
-#ggb #header-bar { background-color: #F39450; text-align: left; padding: 1vh; margin-bottom: 4vh; box-shadow: 0 0 10px black; }
+#ggb #header-bar { background-color: #F39450; text-align: left; padding: 1vh; margin-bottom: 4vh; line-height: 1vh; box-shadow: 0 0 10px black; }
 #ggb #header-bar > * { vertical-align: middle; }
 #ggb #header-bar img { height: 5vh; max-height: 10vw; }
 #ggb #header-menu { float: right; }
 #ggb #header-menu > * { margin-left: 15px; }
 #ggb #header-menu-popup { background-color: #F39450; padding: 1vh; position: fixed; top: 0; right: 0; box-shadow: -1px 1px 20px black; }
 #ggb #header-menu-popup ul { display: inline-block; }
-#ggb #header-menu-popup li { padding: 1vh; }
+#ggb #header-menu-popup li { padding: 1vh; line-height: 1em; }
 #ggb #header-menu-popup li:first-child { padding: 0; text-align: right; }
 #ggb #header-menu-popup li:last-child { padding-bottom: 0px; }
-#ggb #header-menu-popup li > * { vertical-align: middle; }
+#ggb #header-menu-popup li > a > * { vertical-align: middle; }
 #ggb #header-menu-popup img { height: 5vh; padding-right: 20px; }
 #ggb #header-menu-popup li:first-child img { padding: 0; }
+
+#ggb #win-wrapper { display: grid; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(255, 255, 255, 0.5); }
+#ggb #win-wrapper #bingo-text { max-width: 90vw; max-height: 90vh; margin: auto; transform: rotate(-17deg); }
 
 #ggb #gameboard-wrapper { }
 #ggb #gameboard { table-layout: fixed; border-collapse: collapse; object-fit: contain; box-shadow: 0 0 10px black; }
 #ggb #gameboard tr > th { height: auto; }
-#ggb #gameboard tr > * { background: white; text-align: center; padding: 5px; width: 10vh; height: 10vh; font-size: 2vh; border: solid 2px black; }
-#ggb #gameboard tr select { font-size: 2vh; }
+#ggb #gameboard tr > * { background: white; text-align: center; padding: 1vmin; width: 10vmin; height: 10vmin; font-size: 2.5vmin; border: solid 2px black; }
+#ggb #gameboard tr select,
+#ggb #gameboard tr select option { font-size: 3vmin; }
+#ggb #gameboard td { line-height: initial; }
 #ggb #gameboard td.checked { background: rgba(255,255,255,0.5); text-shadow: -2px 2px white, 1px -1px white; }
-#ggb #gameboard #gameboard-name { background: none; }
+#ggb #gameboard #gameboard-name,
+#ggb #gameboard #gameboard-name option { background: none; font-size: 3vmin; }
 
 #ggb #config-wrapper { margin-bottom: 15px; }
 #ggb #config-area { padding: 25px; }
@@ -94,6 +102,8 @@ body { padding: 0; margin: 0; }
 #ggb #saved-boards-area { padding: 25px; }
 
 #ggb #share-wrapper { padding: 5px 10px; }
+#ggb #share-wrapper > div { line-height: initial; }
 #ggb #share-wrapper #lnkShare { background-color: #f1d2b8; display: inline-block; padding: 0.5em 1em; margin: 1em; border-radius: 2em; }
 
 #ggb #about-wrapper { padding: 5px 10px; }
+#ggb #about-wrapper > div { line-height: initial; }
