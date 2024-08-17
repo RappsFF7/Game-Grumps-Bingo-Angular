@@ -6,8 +6,10 @@
         <thead>
             <tr>
                 <th colspan="100%">
-                    <select id="gameboard-name" class="select-button">
-                        <option>{{gameboardService.currentBoard.name}}</option>
+                    <select id="gameboard-name" class="select-button" [(ngModel)]="gameboardService.currentBoard" (change)="gameboardService.currentBoard.doRandomizeRows(true)">
+                        <option *ngFor="let board of gameboardService.boards; index as i" [ngValue]="board">
+                            {{board.name}}
+                        </option>
                     </select>
                 </th>
             </tr>

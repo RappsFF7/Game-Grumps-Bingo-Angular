@@ -1,3 +1,6 @@
+Unfinished
+* Config Tiles doesn't add blank to bottom
+
 # Game Grumps Bingo
 
 A fun weekend project I started when the streamer Bingo card trend took off. This is a conversion of my [original GGB project](https://github.com/RappsFF7/Game-Grumps-Bingo) in plain HTML/CSS/JS to Angular.

@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./saved-boards.component.css']
 })
 export class SavedBoardsComponent implements OnInit {
+  newGameboardName: string
+
   constructor(public gameboardService: GameboardService, public router: Router) { 
   }
 
@@ -19,8 +21,21 @@ export class SavedBoardsComponent implements OnInit {
     this.gameboardService.doSave();
   }
 
+  doCreate() {
+    if ((this.newGameboardName || '').length > 0) {
+      const newBoard = Gameboard.new(this.gameboardService.currentBoard)
+      newBoard.name = this.newGameboardName
+      this.gameboardService.boards.push(newBoard)
+      this.gameboardService.doSave();
+      this.newGameboardName = undefined
+    }
+  }
+
   doRemoveGameboard(i: number) {
-    this.gameboardService.boards.splice(i,1);
+    if (confirm("Are you sure you want to delete the '" + this.gameboardService.boards[i].name + "' board?")) {
+      this.gameboardService.boards.splice(i,1);
+      this.gameboardService.doSave();
+    }
   }
 
   setCurrentGameboard(i: number) {

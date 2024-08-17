@@ -37,22 +37,4 @@ export class GameboardComponent implements OnInit {
       this.gameboardService.currentBoard.rows.forEach(row => row.forEach(cell => cell.isSelected = false))
     }
   }
-
-  /*
-  init() {
-    // Events
-    $('#gameboard').on('change', '#gameboard-name', function () {
-        GGB.savedBoards.data.forEach(el => el.default = false);
-        GGB.gameboard.data = $(this).find(':selected').data('item');
-        GGB.gameboard.data.default = true;
-        GGB.savedBoards.doSave(GGB.gameboard.data);
-        GGB.gameboard.doRefreshBody();
-    });
-  }
-
-  doLoad(data) {
-      GGB.gameboard.data = data;
-      GGB.gameboard.doRefresh();
-  }
-  */
 }

@@ -17,11 +17,14 @@
                     <td class="clickable" title="Load Board"><img class="icon icon-load load" (click)="setCurrentGameboard(i)" (ngModelChange)="doUpdate(i)" /></td>
                     <td class="name"><input name="name" [(ngModel)]="board.name" (ngModelChange)="doUpdate(i)" /></td>
                 </tr>
+                <tr>
+                    <td class="name" colspan="100%"><input name="name" [(ngModel)]="newGameboardName" (blur)="doCreate()" /></td>
+                </tr>
             </tbody>
             <tfoot>
                 <tr><td colspan="100%"><div class="hr"></div></td></tr>
                 <tr>
-                    <td colspan="100%"><a routerLink="/"><button id="btn-back" class="button click">Back</button></a></td>
+                    <td colspan="100%"><a routerLink="/"><button id="btn-back" class="button click clickable">Back</button></a></td>
                 </tr>
             </tfoot>
         </table>

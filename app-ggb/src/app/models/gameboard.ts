@@ -12,6 +12,14 @@ export class Gameboard {
     rows?: Tile[][];
     isBingo: boolean = false;
 
+    public static new(gameboard: Gameboard): Gameboard {
+        const newGb: Gameboard = Object.assign(new Gameboard(), JSON.parse(JSON.stringify(gameboard)))
+        newGb.tiles.forEach(t => t.isSelected = false)
+        newGb.rows = undefined
+        newGb.isBingo = false
+        return newGb
+    }
+
     public static generateDefaultBoard(): Gameboard {
         let board = new Gameboard();
         board.name = 'Power Hour!';
