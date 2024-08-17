@@ -18,6 +18,9 @@
                     </td>
                     <td class="title"><input name="title" [(ngModel)]="tile.title" (ngModelChange)="doUpdate()"></td>
                 </tr>
+                <tr>
+                    <td class="title" colspan="100%"><input name="title" [(ngModel)]="newTileName" (blur)="doCreate()"></td>
+                </tr>
             </tbody>
             <tfoot>
                 <tr><td colspan="100%"><div class="hr"></div></td></tr>
