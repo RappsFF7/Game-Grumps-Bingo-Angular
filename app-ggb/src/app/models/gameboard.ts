@@ -63,6 +63,11 @@ export class Gameboard {
         return board;
     }
 
+    public doClearSelected() {
+        this.tiles.forEach(r => r.isSelected = false);
+        this.rows.forEach(row => row.forEach(cell => cell.isSelected = false));
+    }
+
     public doRandomizeRows(isOnlyIfNewBoard?: boolean) {
         // If desired, only randomize if the board has not been randomized yet
         if (isOnlyIfNewBoard && this.rows) {

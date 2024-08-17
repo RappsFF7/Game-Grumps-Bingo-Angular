@@ -73,11 +73,11 @@ body { padding: 0; margin: 0; }
 #ggb #header-menu > * { margin-left: 15px; }
 #ggb #header-menu-popup { background-color: #F39450; padding: 1vh; position: fixed; top: 0; right: 0; box-shadow: -1px 1px 20px black; }
 #ggb #header-menu-popup ul { display: inline-block; }
-#ggb #header-menu-popup li { padding: 1vh; line-height: 1em; }
+#ggb #header-menu-popup li { font-size: 2.5vmin; padding: 1vmin; line-height: 1em; }
 #ggb #header-menu-popup li:first-child { padding: 0; text-align: right; }
 #ggb #header-menu-popup li:last-child { padding-bottom: 0px; }
 #ggb #header-menu-popup li > a > * { vertical-align: middle; }
-#ggb #header-menu-popup img { height: 5vh; padding-right: 20px; }
+#ggb #header-menu-popup img { height: 5vmin; padding-right: 20px; }
 #ggb #header-menu-popup li:first-child img { padding: 0; }
 
 #ggb #win-wrapper { display: grid; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(255, 255, 255, 0.5); }
@@ -93,6 +93,7 @@ body { padding: 0; margin: 0; }
 #ggb #gameboard td.checked { background: rgba(255,255,255,0.5); text-shadow: -2px 2px white, 1px -1px white; }
 #ggb #gameboard #gameboard-name,
 #ggb #gameboard #gameboard-name option { background: none; font-size: 3vmin; }
+#ggb #gameboard #gameboard-actions { display: flex; justify-content: space-evenly; }
 
 #ggb #config-wrapper { margin-bottom: 15px; }
 #ggb #config-area { padding: 25px; }

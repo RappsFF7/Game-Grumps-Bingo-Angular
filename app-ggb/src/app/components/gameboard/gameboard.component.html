@@ -22,7 +22,10 @@
         <tfoot>
             <tr>
                 <th colspan="100%">
-                    <span id="gameboard-clear" class="clickable" (click)="doClear()">Clear Board</span>
+                    <div id="gameboard-actions">
+                        <span class="clickable" (click)="doClear()">Clear Board</span>
+                        <span class="clickable" (click)="doRandomize()">Randomize Board</span>
+                    </div>
                 </th>
             </tr>
         </tfoot>

@@ -26,15 +26,25 @@ export class GameboardComponent implements OnInit {
   onToggleSquare(sender: Tile) {
     sender.isSelected = !sender.isSelected;
     this.gameboardService.currentBoard.doCheckForBingo();
+    this.gameboardService.doSave();
   }
 
   doHideBingo() {
-      this.gameboardService.currentBoard.isBingo = false
+      this.gameboardService.currentBoard.isBingo = false;
   }
 
   doClear() {
     if (confirm("Clear Board will uncheck all checked board tiles. Do you want to continue?")) {
-      this.gameboardService.currentBoard.rows.forEach(row => row.forEach(cell => cell.isSelected = false))
+      this.gameboardService.currentBoard.doClearSelected();
+      this.gameboardService.doSave();
+    }
+  }
+
+  doRandomize() {
+    if (confirm("Clear board and randomize available tiles and placement?")) {
+      this.gameboardService.currentBoard.doClearSelected();
+      this.gameboardService.currentBoard.doRandomizeRows();
+      console.log(this.gameboardService.currentBoard);
     }
   }
 }
