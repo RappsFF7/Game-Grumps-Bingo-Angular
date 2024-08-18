@@ -1,11 +1,8 @@
-Unfinished
-* Config Tiles doesn't add blank to bottom
-
 # Game Grumps Bingo
 
 A fun weekend project I started when the streamer Bingo card trend took off. This is a conversion of my [original GGB project](https://github.com/RappsFF7/Game-Grumps-Bingo) in plain HTML/CSS/JS to Angular.
 
-![Website Screenshot](https://raw.githubusercontent.com/RappsFF7/Game-Grumps-Bingo/master/html/images/gg_website_screenshot.png)
+![Website Screenshot](https://raw.githubusercontent.com/RappsFF7/Game-Grumps-Bingo-Angular/master/app-ggb/src/assets/images/gg_website_screenshot.png)
 
 ## Features
 
@@ -16,7 +13,7 @@ A fun weekend project I started when the streamer Bingo card trend took off. Thi
 * Can save cell configuration to different, "Game Boards"
     * Boards are saved locally on the device using browser storage
 * Exportable board via HTML link or share device feature to send to friends or online (couch co-op compatible 😉)
-* Randomizes placement on refresh
+* Randomize button
 
 # Project Setup
 
