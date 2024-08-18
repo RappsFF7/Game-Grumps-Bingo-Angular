@@ -18,6 +18,9 @@ export class ConfigComponent implements OnInit {
   }
 
   doUpdate() {
+    // TODO this is a workaround, the currentBoard and boards don't stay in sync after isSelected is changed. The side effect is the board is randomized after a tile change.
+    this.gameboardService.currentBoard.rows = undefined;
+    console.log(this.gameboardService.boards, this.gameboardService.currentBoard)
     this.gameboardService.doSave();
   }
 
