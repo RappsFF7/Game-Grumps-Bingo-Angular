@@ -55,56 +55,7 @@ body { padding: 0; margin: 0; }
 #ggb .edit-list th.min { width: 1%; }
 #ggb .edit-list input { width: 90%; border-radius: 25px; border: none; padding: 5px 30px; background-color: #f1d2b8; }
 
-#ggb #background { position: fixed; height: 100vh; width: 100vw; background: url('/assets/images/gg_bg.jpg'); background-size: cover; }
-/*#ggb #background > * { position: absolute; height: 100%; width: 100%; }
-#ggb #background-left { background: url('images/gg_bg_car.jpg'); background-size: cover; transform: translateX(-50%); }
-#ggb #background-right { background: url('images/gg_bg_volleyball.jpg'); background-size: cover; transform: translateX(+50%); }*/
-
 #ggb #content { position: relative; text-align: center; user-select: none; }
 #ggb #content table { display: inline-table; }
 #ggb #content table.template { display: none; }
 #ggb #content .content-body { box-shadow: 0 0 10px black; background-color: #F39450; }
-#ggb #content #gameboard-wrapper.content-body { box-shadow: none; background-color: transparent; }
-
-#ggb #header-bar { background-color: #F39450; text-align: left; padding: 1vh; margin-bottom: 4vh; line-height: 1vh; box-shadow: 0 0 10px black; }
-#ggb #header-bar > * { vertical-align: middle; }
-#ggb #header-bar img { height: 5vh; max-height: 10vw; }
-#ggb #header-menu { float: right; }
-#ggb #header-menu > * { margin-left: 15px; }
-#ggb #header-menu-popup { background-color: #F39450; padding: 1vh; position: fixed; top: 0; right: 0; box-shadow: -1px 1px 20px black; }
-#ggb #header-menu-popup ul { display: inline-block; }
-#ggb #header-menu-popup li { font-size: 2.5vmin; padding: 1vmin; line-height: 1em; }
-#ggb #header-menu-popup li:first-child { padding: 0; text-align: right; }
-#ggb #header-menu-popup li:last-child { padding-bottom: 0px; }
-#ggb #header-menu-popup li > a > * { vertical-align: middle; }
-#ggb #header-menu-popup img { height: 5vmin; padding-right: 20px; }
-#ggb #header-menu-popup li:first-child img { padding: 0; }
-
-#ggb #win-wrapper { display: grid; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(255, 255, 255, 0.5); }
-#ggb #win-wrapper #bingo-text { max-width: 90vw; max-height: 90vh; margin: auto; transform: rotate(-17deg); }
-
-#ggb #gameboard-wrapper { }
-#ggb #gameboard { table-layout: fixed; border-collapse: collapse; object-fit: contain; box-shadow: 0 0 10px black; }
-#ggb #gameboard tr > th { height: auto; }
-#ggb #gameboard tr > * { background: white; text-align: center; padding: 1vmin; width: 10vmin; height: 10vmin; font-size: 2.5vmin; border: solid 2px black; }
-#ggb #gameboard tr select,
-#ggb #gameboard tr select option { font-size: 3vmin; }
-#ggb #gameboard td { line-height: initial; }
-#ggb #gameboard td.checked { background: rgba(255,255,255,0.5); text-shadow: -2px 2px white, 1px -1px white; }
-#ggb #gameboard #gameboard-name,
-#ggb #gameboard #gameboard-name option { background: none; font-size: 3vmin; }
-#ggb #gameboard #gameboard-actions { display: flex; justify-content: space-evenly; }
-
-#ggb #config-wrapper { margin-bottom: 15px; }
-#ggb #config-area { padding: 25px; }
-#ggb #config-area input[name=name] { text-align: center; }
-
-#ggb #saved-boards-wrapper {}
-#ggb #saved-boards-area { padding: 25px; }
-
-#ggb #share-wrapper { padding: 5px 10px; }
-#ggb #share-wrapper > div { line-height: initial; }
-#ggb #share-wrapper #lnkShare { background-color: #f1d2b8; display: inline-block; padding: 0.5em 1em; margin: 1em; border-radius: 2em; }
-
-#ggb #about-wrapper { padding: 5px 10px; }
-#ggb #about-wrapper > div { line-height: initial; }
