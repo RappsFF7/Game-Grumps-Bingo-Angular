@@ -11,7 +11,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let tile of gameboardService.currentBoard.tiles; index as i">
-                    <td class="controls" title="Delete"><img class="icon icon-delete remove clickable" (click)="doRemoveTile(i)" (ngModelChange)="doUpdate()" /></td>
+                    <td class="controls" title="Delete"><div class="icon icon-delete remove clickable" (click)="doRemoveTile(i)" (ngModelChange)="doUpdate()"></div></td>
                     <td class="free">
                         <input [id]="'free'+i" name="free" type="checkbox" class="icon icon-checkbox icon-grid" [(ngModel)]="tile.free" (ngModelChange)="doUpdate()" />
                         <label [for]="'free'+i" title="Free or Surrounding Tile" class="clickable"></label>

@@ -31,7 +31,10 @@ export class ConfigComponent implements OnInit {
   }
 
   doRemoveTile(i: number) {
-    this.gameboardService.currentBoard.tiles.splice(i,1);
+    if (confirm("Are you sure you want to delete '" + this.gameboardService.currentBoard.tiles[i].title + "'")) {
+      this.gameboardService.currentBoard.tiles.splice(i,1);
+      this.gameboardService.doSave();
+    }
   }
 
 }

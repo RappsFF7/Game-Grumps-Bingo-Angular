@@ -8,13 +8,13 @@
             </thead>
             <tbody>
                 <tr *ngFor="let board of gameboardService.boards; index as i">
-                    <td class="clickable" title="Delete"><img class="icon icon-delete remove" (click)="doRemoveGameboard(i)" (ngModelChange)="doUpdate(i)" /></td>
+                    <td class="clickable" title="Delete"><div class="icon icon-delete remove" (click)="doRemoveGameboard(i)" (ngModelChange)="doUpdate(i)"></div></td>
                     <td class="hidden"><input [id]="'lock'+i" name="lock" type="checkbox" class="icon icon-checkbox icon-lock" /><label [for]="'lock'+i"></label></td>
                     <td class="hidden">
                         <input [id]="'default'+i" name="default" type="radio" class="icon icon-checkbox icon-dot" [(ngModel)]="board.default" (ngModelChange)="doUpdate(i)" />
                         <label [for]="'default'+i"></label>
                     </td>
-                    <td class="clickable" title="Load Board"><img class="icon icon-load load" (click)="setCurrentGameboard(i)" (ngModelChange)="doUpdate(i)" /></td>
+                    <td class="clickable" title="Load Board"><div class="icon icon-load load" (click)="setCurrentGameboard(i)" (ngModelChange)="doUpdate(i)"></div></td>
                     <td class="name"><input name="name" [(ngModel)]="board.name" (ngModelChange)="doUpdate(i)" /></td>
                 </tr>
                 <tr>
